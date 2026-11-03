@@ -1,0 +1,52 @@
+npm init -y
+npm install express mysql2 dotenv cors
+
+---
+
+correr la app automática en base a los cambios:
+
+npx nodemon src/app.js
+
+
+/////////
+
+para jwt:
+
+npm install bcryptjs jsonwebtoken
+
+
+-----------------------------------
+
+cosas qué necesitamos para consumir api desde android:
+
+tenemos este funcionamiento
+
+POST   /api/auth/login
+GET    /api/clientes
+POST   /api/clientes
+PUT    /api/clientes/{id}
+DELETE /api/clientes/{id}
+
+mi funcionamiento es: luego de hacer login espera un token (Bearer) para cada endpoint
+
+documentación para direcciones de red:
+
+https://developer.android.com/studio/run/emulator-networking-address?hl=es-419
+
+documentación para configuraciones de seguridad:
+
+https://developer.android.com/privacy-and-security/security-config?hl=es-419
+
+
+para consumir la api debemos otorgar permisos a internet con esto, esto va antes de <application>
+
+
+<uses-permission android:name="android.permission.INTERNET" />
+
+
+--------------------------------------------------
+
+https://medium.com/@pritam.karmahapatra/retrofit-in-android-with-kotlin-9af9f66a54a8
+
+
+& "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" reverse tcp:3000 tcp:3000
